@@ -3,6 +3,10 @@
   "version": "3.0.3",
   "description": "A tiny JSON logger",
   "main": "bole.js",
+  "files": [
+    "*.js",
+    "!test.js"
+  ],
   "scripts": {
     "test": "node test.js"
   },
