@@ -139,7 +139,7 @@ function levelLogger (level, name) {
     }
 
     if (l === 1 && !hasObjMode) { // fast, standard case
-      outputs[0].write(new Buffer(stringify(level, nameSt, message, out) + '\n'))
+      outputs[0].write(Buffer.from(stringify(level, nameSt, message, out) + '\n'))
       return
     }
 
@@ -150,7 +150,7 @@ function levelLogger (level, name) {
         outputs[i].write(objectOut)
       } else {
         if (stringified === undefined) // lazy stringify
-          stringified = new Buffer(stringify(level, nameSt, message, out) + '\n')
+          stringified = Buffer.from(stringify(level, nameSt, message, out) + '\n')
         outputs[i].write(stringified)
       }
     }
